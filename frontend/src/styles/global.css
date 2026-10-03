@@ -35,3 +35,24 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .error-text { color: #b42318; }
 .status-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 10px; font-size: 12px; color: var(--muted); }
 .legend-item { background: #eef2f7; border-radius: 999px; padding: 2px 10px; }
+.status-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
+.tab-item { border: 1px solid transparent; cursor: pointer; font-size: 12px; color: var(--muted); }
+.tab-item.active { background: var(--brand); color: #fff; }
+.panel { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; }
+.panel-title { font-size: 14px; margin: 0 0 10px; }
+.panel-actions { display: flex; gap: 8px; margin-top: 10px; }
+.create-form { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
+.create-form .filter-item { min-width: 180px; }
+.filter-item input, .filter-item select, .filter-item textarea { border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; font-size: 13px; width: 100%; }
+.opinion-item { display: block; }
+.opinion-item textarea { width: 100%; resize: vertical; }
+.risk-badge { border-radius: 999px; padding: 1px 10px; font-size: 12px; }
+.risk-high { background: #fee4e2; color: #b42318; }
+.risk-mid { background: #fef0c7; color: #b54708; }
+.risk-low { background: #dcfae6; color: #067647; }
+.muted-text { color: var(--muted); font-size: 12px; }
+.notice-text { color: #067647; }
+.conclusion-line { font-size: 13px; margin: 0 0 8px; }
+.timeline { margin: 0; padding-left: 18px; font-size: 13px; display: flex; flex-direction: column; gap: 6px; }
+.timeline-time { color: var(--muted); margin-right: 8px; }
+.profile-select { margin-left: 8px; font-size: 12px; border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; }

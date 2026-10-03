@@ -35,9 +35,10 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 import { loadOverview } from '@/api/local-service'
+import { ENTRIES_CHANGED_EVENT } from '@/data/local-store'
 import type { OverviewResult } from '@/data/types'
 
 const cards = ref<OverviewResult['cards']>([])
@@ -49,5 +50,13 @@ function refresh() {
   moduleRows.value = payload.modules
 }
 
-onMounted(refresh)
+// 任何模块落了新结论（含其它标签页），待审工作台跟着刷新。
+onMounted(() => {
+  refresh()
+  window.addEventListener(ENTRIES_CHANGED_EVENT, refresh)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener(ENTRIES_CHANGED_EVENT, refresh)
+})
 </script>
